@@ -1,0 +1,33 @@
+{
+  "project_info": {
+    "project_number": "110236959237",
+    "firebase_url": "https://dbmgtsystem-default-rtdb.firebaseio.com",
+    "project_id": "dbmgtsystem",
+    "storage_bucket": "dbmgtsystem.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110236959237:android:0b1cbbdb1cc84f98e4526c",
+        "android_client_info": {
+          "package_name": "com.example.eventpass2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_M7TJqQSED1v9pAR5IeqkYp927eLRiZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        },
+        "firebase_database": {
+          "url": "https://dbmgtsystem-default-rtdb.firebaseio.com"
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
