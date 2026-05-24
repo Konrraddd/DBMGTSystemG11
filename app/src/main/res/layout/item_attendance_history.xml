@@ -20,7 +20,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvEventName"
+                android:id="@+id/tvHistoryEventName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -30,17 +30,17 @@
                 android:textColor="#3D0070"/>
 
             <TextView
-                android:id="@+id/tvEventStatus"
+                android:id="@+id/tvHistoryStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🟢 Active"
+                android:text="⏳ Upcoming"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tvEventDate"
+            android:id="@+id/tvHistoryEventDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date"
@@ -49,13 +49,23 @@
             android:layout_marginTop="4dp"/>
 
         <TextView
-            android:id="@+id/tvEventLocation"
+            android:id="@+id/tvHistoryEventLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Location"
             android:textSize="13sp"
             android:textColor="#888888"
             android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tvCheckinTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="#6A1B9A"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

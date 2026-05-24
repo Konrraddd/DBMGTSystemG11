@@ -2,6 +2,8 @@ package com.example.eventpass2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +29,9 @@ class MyEventsActivity : AppCompatActivity() {
 
         val recycler = findViewById<RecyclerView>(R.id.recyclerEvents)
         recycler.layoutManager = LinearLayoutManager(this)
+
+        val tvEmpty = findViewById<TextView>(R.id.tvEmptyEvents)
+
         adapter = EventAdapter(eventList) { event ->
             val intent = Intent(this, EventDetailActivity::class.java)
             intent.putExtra("eventId", event.eventId)
@@ -44,14 +49,19 @@ class MyEventsActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     eventList.clear()
                     for (child in snapshot.children) {
-                        val event = child.getValue(Event::class.java)
-                        if (event != null &&
-                            (event.hostId == uid ||
-                                    child.child("participants").child(uid).exists())) {
+                        val event = child.getValue(Event::class.java) ?: continue
+                        val isParticipant = child.child("participants").child(uid).exists()
+                        if (event.hostId == uid || isParticipant) {
                             eventList.add(event)
                         }
                     }
+                    // Sort: Active first, Ended last
+                    eventList.sortBy { it.isEnded }
                     adapter.notifyDataSetChanged()
+
+                    if (tvEmpty != null) {
+                        tvEmpty.visibility = if (eventList.isEmpty()) View.VISIBLE else View.GONE
+                    }
                 }
                 override fun onCancelled(error: DatabaseError) {}
             })

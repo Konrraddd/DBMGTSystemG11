@@ -1,46 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp">
+    android:background="#FBF0FF">
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="48dp"/>
-
-    <Button
-        android:id="@+id/btnMyQR"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My QR Code"/>
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnCreateEvent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Event"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#3D0070"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/btnMyEvents"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Events"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EventPass"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="40dp"/>
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:layout_marginTop="32dp"/>
+        <Button
+            android:id="@+id/btnMyQR"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="My QR Code"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnCreateEvent"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Create Event"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnJoinEvent"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Join Event"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnMyEvents"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="My Events"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnAttendanceHistory"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Attendance History"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="My Profile"
+            android:backgroundTint="#9C27B0"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Logout"
+            android:backgroundTint="#888888"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+    </LinearLayout>
+</ScrollView>

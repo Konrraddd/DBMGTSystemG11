@@ -6,5 +6,7 @@ data class Event(
     val date: String = "",
     val location: String = "",
     val hostId: String = "",
-    val hostName: String = ""
+    val hostName: String = "",
+    val eventCode: String = "",
+    val isEnded: Boolean = false
 )

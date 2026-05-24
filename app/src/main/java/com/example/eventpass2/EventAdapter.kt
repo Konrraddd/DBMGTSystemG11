@@ -15,6 +15,7 @@ class EventAdapter(
         val tvName: TextView = view.findViewById(R.id.tvEventName)
         val tvDate: TextView = view.findViewById(R.id.tvEventDate)
         val tvLocation: TextView = view.findViewById(R.id.tvEventLocation)
+        val tvStatus: TextView = view.findViewById(R.id.tvEventStatus)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,6 +31,17 @@ class EventAdapter(
         holder.tvName.text = event.name
         holder.tvDate.text = event.date
         holder.tvLocation.text = event.location
+        if (event.isEnded) {
+            holder.tvStatus.text = "🔴 Ended"
+            holder.tvStatus.setTextColor(
+                holder.itemView.context.getColor(android.R.color.holo_red_dark)
+            )
+        } else {
+            holder.tvStatus.text = "🟢 Active"
+            holder.tvStatus.setTextColor(
+                holder.itemView.context.getColor(android.R.color.holo_green_dark)
+            )
+        }
         holder.itemView.setOnClickListener { onClick(event) }
     }
 }
