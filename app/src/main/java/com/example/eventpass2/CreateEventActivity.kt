@@ -24,6 +24,7 @@ class CreateEventActivity : AppCompatActivity() {
         val etName = findViewById<EditText>(R.id.etEventName)
         val etDate = findViewById<EditText>(R.id.etEventDate)
         val etLocation = findViewById<EditText>(R.id.etEventLocation)
+        val etDescription = findViewById<EditText>(R.id.etEventDescription)
 
         // Date picker
         etDate.isFocusable = false
@@ -47,9 +48,10 @@ class CreateEventActivity : AppCompatActivity() {
                     val name = etName.text.toString().trim()
                     val date = etDate.text.toString().trim()
                     val location = etLocation.text.toString().trim()
+                    val description = etDescription.text.toString().trim()
 
                     if (name.isEmpty() || date.isEmpty() || location.isEmpty()) {
-                        Toast.makeText(this, "Fill in all fields", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Fill in all required fields", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
 
@@ -62,9 +64,11 @@ class CreateEventActivity : AppCompatActivity() {
                         name = name,
                         date = date,
                         location = location,
+                        description = description,
                         hostId = uid,
                         hostName = user?.name ?: "",
-                        eventCode = eventCode
+                        eventCode = eventCode,
+                        isEnded = false
                     )
 
                     ref.child(eventId).setValue(event)

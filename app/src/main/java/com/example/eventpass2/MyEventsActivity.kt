@@ -38,6 +38,7 @@ class MyEventsActivity : AppCompatActivity() {
             intent.putExtra("eventName", event.name)
             intent.putExtra("eventDate", event.date)
             intent.putExtra("eventLocation", event.location)
+            intent.putExtra("eventDescription", event.description)
             intent.putExtra("hostId", event.hostId)
             startActivity(intent)
         }
@@ -59,10 +60,9 @@ class MyEventsActivity : AppCompatActivity() {
                     eventList.sortBy { it.isEnded }
                     adapter.notifyDataSetChanged()
 
-                    if (tvEmpty != null) {
-                        tvEmpty.visibility = if (eventList.isEmpty()) View.VISIBLE else View.GONE
-                    }
+                    tvEmpty.visibility = if (eventList.isEmpty()) View.VISIBLE else View.GONE
                 }
+
                 override fun onCancelled(error: DatabaseError) {}
             })
     }
